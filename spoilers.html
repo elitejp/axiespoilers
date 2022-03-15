@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axies Spoilers</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets\css\spoilers.css">
+</head>
+<body>
+  <header>
+    <img id="axieLogo" src="assets\img\axieLogo.png" alt="logo">
+    <nav>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="spoilers.html">Spoilers</a></li>
+        <li><a href="#">Meta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="filters">
+    <input type="text" id="tagFilter" placeholder="Name, heal, energy...">
+    <div class="containerFilters">
+      <select id="classes">
+        <option value="all">-- Class --</option>
+        <option value="aquatic">Aquatic</option>
+        <option value="birdie">Birdie</option>
+        <option value="beast">Beast</option>
+        <option value="bug">Bug</option>
+        <option value="plant">Plant</option>
+        <option value="reptile">Reptile</option>
+      </select>
+    </div>
+    <div class="containerFilters">
+      <select id="parts">
+        <option value="all">-- Parts --</option>
+        <option value="back">Back</option>
+        <option value="ears">Ears</option>
+        <option value="eye">Eye</option>
+        <option value="head">Head</option>
+        <option value="mouth">Mouth</option>
+        <option value="tail">Tail</option>
+      </select>
+    </div>
+    <div class="containerFilters">
+      <select id="type">
+        <option value="all">-- Types --</option>
+        <option value="attack">Attack</option>
+        <option value="banish">Banish</option>
+        <option value="innate">Innate</option>
+        <option value="retain">Retain</option>
+        <option value="secret">Secret</option>
+        <option value="skill">Skill</option>
+      </select>
+    </div>
+    <div class="containerFilters">
+      <select id="cost">
+        <option value="all">-- Cost --</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+    <div class="containerFilters">
+      <select id="sortBy">
+        <option value="all">-- Sort by --</option>
+        <option value="highestAttack">Highest Attack</option>
+        <option value="highestShild">Highest Shild</option>
+        <option value="highestCosts">Highest Costs</option>
+        <option value="lowestCosts">Lowest Costs</option>
+      </select>
+    </div>
+    <button onclick="filter()">Search</button>
+  </div>
+
+  <div class="spoilers">
+    <!-- Back Cards -->
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="50"
+    data-shild="0">
+      <img src="assets\img\Back\Anemone.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Balloon.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Back\Bidens.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\BlueMoon.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\BoneSail.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="20"
+    data-shild="0">
+      <img src="assets\img\Back\BuzzBuzz.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\Croc.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Cupid.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="40"
+    data-shild="0">
+      <img src="assets\img\Back\Furball.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="2" 
+    data-type="attack" data-damage="120"
+    data-shild="0">
+      <img src="assets\img\Back\GarishWorm.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="65"
+    data-shild="0">
+      <img src="assets\img\Back\Goldfish.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Back\GreenThorns.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Back\Hermit.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Hero.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\IndianStar.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Jaguar.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Back\Kingfisher.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="20">
+      <img src="assets\img\Back\Mint.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="2" 
+    data-type="attack" data-damage="30"
+    data-shild="0">
+      <img src="assets\img\Back\Perch.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="55"
+    data-shild="0">
+      <img src="assets\img\Back\PigeonPost.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\Pumpkin.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Raven.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="65">
+      <img src="assets\img\Back\RedEar.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="90"
+    data-shild="0">
+      <img src="assets\img\Back\RiskyBeast.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="40"
+    data-shild="0">
+      <img src="assets\img\Back\Ronin.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="2" 
+    data-type="attack" data-damage="100"
+    data-shild="0">
+      <img src="assets\img\Back\Sandal.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="30"
+    data-shild="0">
+      <img src="assets\img\Back\Scarab.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Back\Shiitake.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\SnailShell.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Back\SpikyWing.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\Sponge.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\Timber.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="25"
+    data-shild="0">
+      <img src="assets\img\Back\TriFeather.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="25"
+    data-shild="0">
+      <img src="assets\img\Back\TriSpikes.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Back\Turnip.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="back" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Back\WateringCan.PNG" alt="">
+    </div>
+    
+    <!-- Tail Cards -->
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="40">
+      <img src="assets\img\Tail\Ant.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Tail\Carrot.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="50"
+    data-shild="0">
+      <img src="assets\img\Tail\Cattail.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Cloud.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="0" 
+    data-type="skill" data-damage="0"
+    data-shild="0" data-heal="25"
+    data-variety="banish">
+      <img src="assets\img\Tail\Cottontail.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="35"
+    data-shild="0">
+      <img src="assets\img\Tail\FeatherFan.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Tail\FishSnack.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Gerbil.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="40"
+    data-shild="0">
+      <img src="assets\img\Tail\Gila.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="25"
+    data-shild="0" data-variety="innate">
+      <img src="assets\img\Tail\GranmasFan.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\GrassSnake.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Tail\GravelAnt.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Hare.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="tail" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Tail\Hatsune.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="tail" data-cost="1" 
+    data-type="skill" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Tail\HotButt.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Iguana.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="120"
+    data-shild="0">
+      <img src="assets\img\Tail\Koi.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Navaga.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="0" 
+    data-type="skill" data-damage="0"
+    data-shild="0" data-variety="banish">
+      <img src="assets\img\Tail\Nimo.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Tail\NutCracker.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="100"
+    data-shild="0">
+      <img src="assets\img\Tail\PostFight.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plant" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\PotatoLeaf.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="60">
+      <img src="assets\img\Tail\Pupae.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="50"
+    data-shild="0">
+      <img src="assets\img\Tail\Ranchu.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Tail\Rice.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="beast" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="130"
+    data-shild="0">
+      <img src="assets\img\Tail\Shiba.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Shrimp.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="1" 
+    data-type="secret" data-damage="0"
+    data-shild="0">
+      <img src="assets\img\Tail\SnakeJar.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\Swallow.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="aquatic" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="65"
+    data-shild="0">
+      <img src="assets\img\Tail\Tadpole.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="birdie" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="70"
+    data-shild="0">
+      <img src="assets\img\Tail\TheLastOne.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="2" 
+    data-type="attack" data-damage="110"
+    data-shild="0">
+      <img src="assets\img\Tail\ThornyCaterpillar.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0" data-variety="retain">
+      <img src="assets\img\Tail\TinyDino.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="bug" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="35"
+    data-shild="0">
+      <img src="assets\img\Tail\TwinTail.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="reptile" 
+    data-part="tail" data-cost="1" 
+    data-type="attack" data-damage="60"
+    data-shild="0">
+      <img src="assets\img\Tail\WallGecko.PNG" alt="">
+    </div>
+    <div class="containerCards" data-class="plan" 
+    data-part="tail" data-cost="0" 
+    data-type="attack" data-damage="5"
+    data-shild="0">
+      <img src="assets\img\Tail\Yam.PNG" alt="">
+    </div>
+    
+  </div>
+
+  <footer>
+    <p>Um projeto para a comunidade</p>
+    <a id="contact" href="#">Contato</a>
+  </footer>
+  <script src="assets\js\spoilers.js"></script>
+</body>
+</html>
